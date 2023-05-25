@@ -46,37 +46,39 @@ function desencriptar() {
     return;
   }
   var desencriptada = [];
-  for (x = 0; x < texto.length; x++) {
+  for (var x = 0; x < texto.length; x++) {
     if (texto.substr(x, 2) == "ai") {
       desencriptada.push("a");
-      x+=2;
+      x+=1;
     }
-    if (texto.substr(x, 4) == "imes") {
+    else if(texto.substr(x, 4) == "imes") {
       desencriptada.push("i");
-      x+=4;
+      x+=3;
     }
-    if (texto.substr(x, 4) == "ober") {
+    else if (texto.substr(x, 4) == "ober") {
       desencriptada.push("o");
-      x+=4;
+      x+=3;
     }
-    if (texto.substr(x, 4) == "ufat") {
+    else if (texto.substr(x, 4) == "ufat") {
       desencriptada.push("u");
-      x+=4;
+      x+=3;
     }
-    if (texto.substr(x, 5) == "enter") {
+    else if (texto.substr(x, 5) == "enter") {
       desencriptada.push("e");
       x+=4;
     } 
     else {
         console.log(x)
-        desencriptada.push(texto[x]);
+        console.log(texto.substr(x, 4))
 
+        desencriptada.push(texto[x]);
         
         if(x>texto.length){
             break
-        }
-        
+        }  
     }
+
+
   }
   elementoMostrado.textContent = desencriptada.join("");
 }
