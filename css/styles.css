@@ -1,3 +1,9 @@
+body {
+  background: url(../assets/dragon-scales.svg);
+  width: 100%;
+  height: 100vh;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +13,6 @@
 }
 
 body {
-  background-color: rgb(52, 52, 81);
   display: flex;
 }
 
@@ -101,7 +106,7 @@ img {
   width: 40rem;
   height: 2rem;
   border-radius: 5px;
-  background-color: #0567bd;
+  background-color: #7051d4;
   color: #FFF;
   transition: 1s all;
 }
