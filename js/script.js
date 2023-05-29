@@ -1,77 +1,76 @@
 function encriptar() {
-  var cifrado = [];
+  var cifrado = "";
   var textarea = document.getElementById("texto-area");
-  var elementoMostrado = document.getElementById("myDIV");
-  var boton = document.getElementById("miBoton");
-  boton.style.display = "grid";
+  var texto_encontrado = document.getElementById("texto_encontrado");
+  var texto_encriptado = document.getElementById("texto_encriptado");
+  var ningun_texto = document.getElementById("ningun_texto");
+  ningun_texto.style.display = "none";
+  texto_encontrado.style.display = "flex";
   var texto = textarea.value;
 
   if (texto.length == 0) {
-    return;
+    texto_encontrado.style.display = "none";
+    ningun_texto.style.display = "flex";
   }
   for (var i = 0; i < texto.length; i++) {
     var letra = texto.charAt(i);
     if (letra == "e") {
-      cifrado.push("enter");
+      cifrado += "enter";
+    } else if (letra == "i") {
+      cifrado += "imes";
+    } else if (letra == "a") {
+      cifrado += "ai";
+    } else if (letra == "o") {
+      cifrado += "ober";
+    } else if (letra == "u") {
+      cifrado += "ufat";
+    } else {
+      cifrado += letra;
     }
-    if (letra == "i") {
-      cifrado.push("imes");
-    }
-    if (letra == "a") {
-      cifrado.push("ai");
-    }
-    if (letra == "o") {
-      cifrado.push("ober");
-    }
-    if (letra == "u") {
-      cifrado.push("ufat");
-    }
-    if (
-      !(letra == "e") &&
-      !(letra == "i") &&
-      !(letra == "a") &&
-      !(letra == "o") &&
-      !(letra == "u")
-    ) {
-      cifrado.push(letra);
-    }
-    elementoMostrado.textContent = cifrado.join("");
   }
+    texto_encriptado.textContent = cifrado;
+
+
+
 }
 function desencriptar() {
   var textarea = document.getElementById("texto-area");
-  var elementoMostrado = document.getElementById("myDIV");
+  var texto_encontrado = document.getElementById("texto_encontrado");
+  var texto_desencriptado = document.getElementById("texto_encriptado");
+  var ningun_texto = document.getElementById("ningun_texto");
+  ningun_texto.style.display = "none";
+  texto_encontrado.style.display = "flex";
   var texto = textarea.value;
-  if(texto==""){
-    return;
+  var desencriptado = "";
+
+  if(texto.length == 0){
+    texto_encontrado.style.display = "none";
+    ningun_texto.style.display = "flex";
   }
-  var desencriptada = [];
   for (var x = 0; x < texto.length; x++) {
     if (texto.substr(x, 2) == "ai") {
-      desencriptada.push("a");
+      desencriptado+="a";
       x+=1;
     }
     else if(texto.substr(x, 4) == "imes") {
-      desencriptada.push("i");
+      desencriptado+="i";
       x+=3;
     }
     else if (texto.substr(x, 4) == "ober") {
-      desencriptada.push("o");
+      desencriptado+="o";
       x+=3;
     }
     else if (texto.substr(x, 4) == "ufat") {
-      desencriptada.push("u");
+      desencriptado+="u";
       x+=3;
     }
     else if (texto.substr(x, 5) == "enter") {
-      desencriptada.push("e");
+      desencriptado+="e";
       x+=4;
     } 
     else {
-        console.log(x)
-        console.log(texto.substr(x, 4))
 
-        desencriptada.push(texto[x]);
+      desencriptado+=(texto[x]);
         
         if(x>texto.length){
             break
@@ -80,12 +79,12 @@ function desencriptar() {
 
 
   }
-  elementoMostrado.textContent = desencriptada.join("");
+  texto_desencriptado.textContent = desencriptado;
 }
 
 function copyToClipBoard() {
 
-  var content = document.getElementById('myDIV').innerHTML;
+  var content = document.getElementById('texto_encriptado').innerHTML;
 
   navigator.clipboard.writeText(content)
       .then(() => {
