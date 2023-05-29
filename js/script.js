@@ -12,6 +12,18 @@ function encriptar() {
     texto_encontrado.style.display = "none";
     ningun_texto.style.display = "flex";
   }
+  function contieneCaracteresEspeciales(texto) {
+    var regex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+    return regex.test(texto);
+  }
+  function tieneMayusculas(texto) {
+    return /[A-Z]/.test(texto);
+  }
+  if(tieneMayusculas(texto)==true || contieneCaracteresEspeciales(texto)==true  ){
+    window.alert("Caracter no valido");
+    texto_encontrado.style.display = "none";
+    ningun_texto.style.display = "flex";
+  }
   for (var i = 0; i < texto.length; i++) {
     var letra = texto.charAt(i);
     if (letra == "e") {
@@ -44,6 +56,18 @@ function desencriptar() {
   var desencriptado = "";
 
   if(texto.length == 0){
+    texto_encontrado.style.display = "none";
+    ningun_texto.style.display = "flex";
+  }
+  function contieneCaracteresEspeciales(texto) {
+    var regex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+    return regex.test(texto);
+  }
+  function tieneMayusculas(texto) {
+    return /[A-Z]/.test(texto);
+  }
+  if(tieneMayusculas(texto)==true || contieneCaracteresEspeciales(texto)==true  ){
+    window.alert("Caracter no valido");
     texto_encontrado.style.display = "none";
     ningun_texto.style.display = "flex";
   }
