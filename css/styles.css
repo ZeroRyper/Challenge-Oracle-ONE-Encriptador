@@ -56,8 +56,6 @@ img {
 
 .contenedor-mensaje {
   width: 30vw;
-  min-height: 60vh;
-  max-height: calc(90vh - 2em);
   margin: 0 2rem;
   color: #FFF;
   background-color: rgb(112, 81, 212);
@@ -162,11 +160,9 @@ img {
   }
   .contenedor-mensaje {
     width: 90%;
-    min-height: 0;
   }
   .texto-ingresado {
     width: 90vw;
-    min-height: 70vh;
   }
   .muneco_img {
     display: none;
@@ -183,6 +179,14 @@ img {
   .boton-copy {
     width: 80%;
     height: 3rem;
+  }
+}
+@media screen and (max-width: 426px) {
+  .contenedor-mensaje {
+    width: 80%;
+  }
+  .texto-ingresado {
+    width: 80%;
   }
 }
 @font-face {
