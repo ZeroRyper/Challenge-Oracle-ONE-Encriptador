@@ -1,5 +1,5 @@
 <div align="center">
-#Proyecto Challenge Oracle
+    <h1>Proyecto Challenge Oracle</h1>
 <img src="./assets/Screenshot.png">
 </div>
 <div align="center">
