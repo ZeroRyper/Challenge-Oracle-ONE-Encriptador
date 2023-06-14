@@ -64,6 +64,7 @@ img {
   color: #FFF;
   background-color: rgb(112, 81, 212);
   border-radius: 10px;
+  width: 20%;
 }
 .contenedor-mensaje .ningun_mensaje {
   height: 100%;
