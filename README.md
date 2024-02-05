@@ -14,7 +14,7 @@
 <hr>
 <div align="start">
 <p>Ableton Bocchi Version</p>
-<img src="./assets/Screenshot_AB.png">
+<img src="https://github.com/ZeroRyper/org/blob/master/src/componets/img/Screenshot_ORG.png?raw=true">
 <br>
 <hr>
 <p>MegaMenu extensible using javascript</p>
